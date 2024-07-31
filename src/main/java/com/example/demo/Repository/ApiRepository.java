@@ -18,7 +18,7 @@ public class ApiRepository {
 			
 			 this.jdbcTemp.update(q,id,name,salary);
 			 
-			 return id + "id data added SuccessFully!!";
+			 return id + " id data added SuccessFully!!";
 			
 			
 		}catch (Exception e) {
@@ -39,7 +39,7 @@ public class ApiRepository {
 			
 			this.jdbcTemp.update(q,name,salary,id);
 			
-			return "update data!!";
+			return id + " id data updated SuccessFully!!";
 			
 		} catch (Exception e) {
 			
@@ -47,6 +47,23 @@ public class ApiRepository {
 			
 		}
 		
+	}
+
+	public String deleteDataInfo(int id) {
+		
+		try {
+			
+			String q = "delete from xxcust_emp_tbl\r\n"
+					+ "where emp_id = ?";
+			
+			this.jdbcTemp.update(q,id);
+			
+			return id + " id data delete Successfully!!";
+			
+		} catch (Exception e) {
+			return e.getMessage();
+		}
+
 	}
 	
 	

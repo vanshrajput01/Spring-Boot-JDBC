@@ -6,4 +6,6 @@ public interface ApiService {
 
 	String updateData(int id, String name, int salary);
 
+	String deleteData(int id);
+
 }

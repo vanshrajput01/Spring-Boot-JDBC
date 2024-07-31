@@ -1,7 +1,9 @@
 package com.example.demo.Controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -32,5 +34,18 @@ public class ApiController {
 		return apiService.updateData(id,name,salary);
 		
 	}
+	
+	@DeleteMapping("/DeleteData")
+	public String deleteData(@RequestParam(name = "id") int id) {
+		
+		
+		return apiService.deleteData(id);
+		
+	}
+	
+
+
+	
+
 
 }

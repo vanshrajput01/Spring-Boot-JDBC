@@ -26,4 +26,10 @@ public class ApiServiceImpl implements ApiService{
 		
 	}
 
+	@Override
+	public String deleteData(int id) {
+		
+		return this.apiRepo.deleteDataInfo(id);
+	}
+
 }
