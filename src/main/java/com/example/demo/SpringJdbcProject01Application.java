@@ -1,13 +1,16 @@
 package com.example.demo;
 
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringJdbcProject01Application {
+public class SpringJdbcProject01Application{
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringJdbcProject01Application.class, args);
 	}
+
+
 
 }
