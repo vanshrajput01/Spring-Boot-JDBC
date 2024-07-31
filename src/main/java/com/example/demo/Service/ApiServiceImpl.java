@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.Repository.ApiRepository;
+import com.example.demo.ResponseDto.Response;
 
 @Service
 public class ApiServiceImpl implements ApiService{
@@ -30,6 +31,12 @@ public class ApiServiceImpl implements ApiService{
 	public String deleteData(int id) {
 		
 		return this.apiRepo.deleteDataInfo(id);
+	}
+
+	@Override
+	public Response getData(int id) {
+		
+		return this.apiRepo.getDataInfo(id);
 	}
 
 }

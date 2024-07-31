@@ -1,8 +1,14 @@
 package com.example.demo.Repository;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
+
+import com.example.demo.ResponseDto.Response;
 
 @Repository
 public class ApiRepository {
@@ -64,6 +70,28 @@ public class ApiRepository {
 			return e.getMessage();
 		}
 
+	}
+
+	public Response getDataInfo(int id) {
+		
+		
+		String q = "select * from xxcust_emp_tbl where emp_id = ?";
+		
+		 Response result = (Response) this.jdbcTemp.queryForObject(q, new RowMapper() {
+			
+			@Override
+			public Response mapRow(ResultSet rs, int rowNum) throws SQLException {
+				Response objResponse = new Response();
+				objResponse.setEmp_id(rs.getInt("emp_id"));
+				objResponse.setEmp_name(rs.getString("emp_name"));
+				objResponse.setEmp_salary(rs.getInt("emp_salary"));
+				return objResponse;
+			}},id);
+		 
+		 return result;
+		
+		
+		
 	}
 	
 	
