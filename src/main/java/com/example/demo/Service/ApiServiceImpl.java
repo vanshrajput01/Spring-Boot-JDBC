@@ -1,5 +1,7 @@
 package com.example.demo.Service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -37,6 +39,12 @@ public class ApiServiceImpl implements ApiService{
 	public Response getData(int id) {
 		
 		return this.apiRepo.getDataInfo(id);
+	}
+
+	@Override
+	public List<Response> getAllData() {
+		
+		return this.apiRepo.getAllDataInfo();
 	}
 
 }

@@ -1,5 +1,7 @@
 package com.example.demo.Service;
 
+import java.util.List;
+
 import com.example.demo.ResponseDto.Response;
 
 public interface ApiService {
@@ -11,5 +13,7 @@ public interface ApiService {
 	String deleteData(int id);
 
 	Response getData(int id);
+
+	List<Response> getAllData();
 
 }

@@ -2,6 +2,7 @@ package com.example.demo.Repository;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -92,6 +93,26 @@ public class ApiRepository {
 		
 		
 		
+	}
+
+	public List<Response> getAllDataInfo() {
+		String q = "select * from xxcust_emp_tbl";
+		
+		List<Response> result= (List<Response>) this.jdbcTemp.query(q,new RowMapper() {
+
+			@Override
+			public Response mapRow(ResultSet rs, int rowNum) throws SQLException {
+				
+				Response res = new Response();
+				res.setEmp_id(rs.getInt("emp_id"));
+				res.setEmp_name(rs.getString("emp_name"));
+				res.setEmp_salary(rs.getInt("emp_salary"));
+				
+				return res;
+			}
+			
+		});
+		return result;
 	}
 	
 	
