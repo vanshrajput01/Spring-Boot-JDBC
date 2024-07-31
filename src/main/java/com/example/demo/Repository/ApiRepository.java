@@ -29,6 +29,25 @@ public class ApiRepository {
 
 		
 	}
+
+	public String UpdateInfo(int id, String name, int salary) {
+		try {
+			
+			String q = "update  xxcust_emp_tbl\r\n"
+					+ "set emp_name = ? , emp_salary = ? \r\n"
+					+ "where emp_id = ?";
+			
+			this.jdbcTemp.update(q,name,salary,id);
+			
+			return "update data!!";
+			
+		} catch (Exception e) {
+			
+			return e.getMessage();
+			
+		}
+		
+	}
 	
 	
 

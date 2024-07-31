@@ -17,4 +17,13 @@ public class ApiServiceImpl implements ApiService{
 		return apiRepo.addDataInfo(id,name,salary);
 	}
 
+	@Override
+	public String updateData(int id, String name, int salary) {
+		
+		return apiRepo.UpdateInfo(id, name, salary);
+		
+
+		
+	}
+
 }

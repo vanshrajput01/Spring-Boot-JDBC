@@ -4,4 +4,6 @@ public interface ApiService {
 
 	String addData(int id, String name, int salary);
 
+	String updateData(int id, String name, int salary);
+
 }

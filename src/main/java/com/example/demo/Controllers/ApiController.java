@@ -22,5 +22,15 @@ public class ApiController {
 		return apiService.addData(id,name,salary);
 		
 	}
+	
+	@GetMapping("/updateData")
+	public String updateData(@RequestParam(name = "id") int id,
+						  @RequestParam(name = "name") String name,
+						  @RequestParam(name = "salary") int salary) {
+		
+		
+		return apiService.updateData(id,name,salary);
+		
+	}
 
 }
